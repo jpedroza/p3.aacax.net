@@ -11,6 +11,21 @@
 |
 */
 
+//This is the main Welcome function
 Route::get('/', function () {
     return view('welcome');
-});
+}); 
+
+//These are for Manager Ipsum
+Route::get('/manageripsum', 'ManagerIpsumController@getIndex');
+Route::post('/manageripsum', 'ManagerIpsumController@postIndex');
+
+//These are for Late Night Power Boost
+Route::get('/latenightpowerboost', 'LateNightPowerBoostController@getIndex');
+Route::post('/latenightpowerboost', 'LateNightPowerBoostController@postIndex');
+
+//These are for Superhero User Name Generator
+Route::get('/superherousernamegenerator', 'SuperheroUserNameGeneratorController@getIndex');
+Route::post('/superherousernamegenerator', 'SuperheroUserNameGeneratorController@postIndex');
+
+//Route::get('/superherousernamegeneratorA', 'SuperheroUserNameGeneratorController@getACoolUserName');

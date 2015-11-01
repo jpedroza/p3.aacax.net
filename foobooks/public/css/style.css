@@ -1,0 +1,295 @@
+#pl {
+	float: left;
+	display: inline;
+}
+
+#h1index {
+	margin: 0;
+}
+
+#h2index {
+	margin: 0;
+}
+
+#pr {
+	float: right;
+	display: inline;
+}
+
+body {
+	margin: 10px;
+	height: 580px;
+}
+
+#far {
+	margin-bottom: 10px;
+}
+
+#container {
+	margin: 0%;
+	width: 100%;
+	height: 100%;
+}
+
+#containerindex {
+	margin: 0%;
+	width: 100%;
+	height: 480px;
+}
+
+.clearfloat {
+	clear: both;
+}
+
+h1  {
+	font-family: Cabin Sketch;
+	text-align: center;
+}
+
+h2 {
+	font-family: Cabin Sketch;
+	text-align: center;
+}
+
+h3 {
+	font-family: Cabin Sketch;
+	text-align: center;
+	margin: 15px 0 10px 0;
+}
+
+hr {
+	margin: 0 15px 0 15px;
+}
+
+p {
+	font-family: 'Patrick Hand SC', cursive;
+	text-align: center;
+	margin:15px;
+}
+
+img {
+	position: relative;
+	margin: 2% 30% 0 30%;
+}
+
+#img {
+	margin: 15px 0 15px 0;
+}
+
+
+
+#center {
+	position: absolute;
+	top:80px;
+	left: 37.29%;
+	border: 3px solid black;
+	border-radius: 20px;
+	width:25%;
+	height: 380px;
+	box-shadow: 15px 15px 6px #888888;
+}
+
+/*#center {
+	position: absolute;
+	top:126px;
+	left: 37.29%;
+	width:25%;
+	height: 430px;
+}*/
+
+#centerfarside {
+	position: absolute;
+	top: 10%;
+	left: 37%;
+
+	width: 100%;
+	height: 100%;
+}
+
+#left {	
+	position: absolute;
+	top: 80px;
+	left:10%;
+	border: 3px solid black;
+	border-radius: 20px;
+	width:25%;
+	height: 380px;
+	box-shadow: 15px 15px 6px #888888;
+}
+
+#right {
+	position: absolute;
+	top: 80px;
+	right:10%;
+	border: 3px solid black;
+	border-radius: 20px;
+	width:25%;
+	height: 380px;
+	box-shadow: 15px 15px 6px #888888;
+}
+
+#navbar {
+	top: 10px;
+	display: inline;
+}
+
+#pmlibutton {
+	height: 45px;
+	width:291px;
+	margin-top: 20;
+}
+
+#pmliimg {
+	margin:3px;
+}
+
+#pmlibuttonindex {
+	height: 45px;
+	width:291px;
+	margin-top: 20;
+	left: 40%;
+	position: absolute;
+}
+
+#pmlibuttonLMPB {
+	height: 45px;
+	width:291px;
+	margin-top: 20;
+	left: 40%;
+	position: absolute;
+}
+
+#submitsendbutton {
+	style="background-color: transparent; 
+	border-color: transparent;"
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	position: relative;
+	right: -90px;
+}
+
+#smtcbuttonimg {
+	margin: 0px;
+	width: 269px;
+	height: 46px;
+}
+
+#sungbutton {	/* this is the specific a href for the button*/
+	position: absolute;
+	left: 13%; 
+	height: 45px;
+	width:295px;
+	margin-top: 20;
+}
+
+#sungimg {/* this is the specific img for the button to get a particular look and feel that is not available with html buttons*/
+	margin:3px;
+}
+
+#lnpbbuttonMI {/* this is the specific a href for the button*/
+	position: absolute;
+	left: 43%;
+	height: 44px;
+	width:221px;
+	margin-top: 20;
+}
+
+#lnpbbuttonindex {/* this is the specific a href for the button*/
+	position: absolute;
+	left: 69%;
+	height: 44px;
+	width:221px;
+	margin-top: 20;
+}
+
+#farsideimg {/* this is the specific img for the button to get a particular look and feel that is not available with html buttons*/
+	margin:3px;
+}
+
+#formPMLM {
+	border: 3px solid black;
+	margin: 1%;
+	width: 369px;
+	left: 36.5%;
+	top: 11.5%;
+	position: absolute;
+}
+
+#formFS {
+	border: 3px solid black;
+	margin: 1%;
+	width: 369px;
+	left: 60%;
+	top: 11.5%;
+	position: absolute;
+}
+
+#gbtthpbutton { 	/* this is the specific a href for the button*/
+	position: absolute;
+	left: 65%;
+	height: 46px;
+	width:269px;
+	margin-top: 20;
+}
+
+#gbtthpbuttonimg {
+	margin:3px;
+}
+
+#generatebutton {
+	style="background-color: transparent; 
+	border-color: transparent;"
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	position: relative;
+	right: -15%;
+}
+
+#generatebuttonimg {
+	margin: 0px;
+	width: 250px;
+	height: 40px;
+}
+
+#hmwpp {
+	width: 20px;
+	text-align: auto;
+	position: absolute;
+	left: 45%;
+}
+
+#hmp {
+	width: 40px;
+	text-align: auto;
+	position: absolute;
+	left: 45%;
+}
+
+#telephone {
+	display: inline;
+}
+
+#email {
+	display: inline;
+}
+
+#name {
+	width: 260px;
+}
+
+#uc {
+	font-size: 8em;
+}
+
+#thx {
+	display: inline;
+	font-size: 3em;
+	text-align: center;
+	margin-left: 70px;
+}
+
+#containerPMLID {
+	height: 400px;
+}

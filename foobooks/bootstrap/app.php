@@ -41,6 +41,7 @@ $app->singleton(
     Foobooks\Exceptions\Handler::class
 );
 
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

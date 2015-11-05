@@ -28,4 +28,3 @@ Route::post('/latenightpowerboost', 'LateNightPowerBoostController@postIndex');
 Route::get('/superherousernamegenerator', 'SuperheroUserNameGeneratorController@getIndex');
 Route::post('/superherousernamegenerator', 'SuperheroUserNameGeneratorController@postIndex');
 
-//Route::get('/superherousernamegeneratorA', 'SuperheroUserNameGeneratorController@getACoolUserName');

@@ -8,6 +8,7 @@ class SuperheroUserNameGeneratorController extends Controller
 {
     public function getIndex()
     {
+        //return "Get the number of user names to Generate";
 		return view('superherousernamegenerator.index');
     }
 	
@@ -23,11 +24,12 @@ class SuperheroUserNameGeneratorController extends Controller
 			$outstring .=
 				"<li class='user'>
 					<ul>
-						<li class='unli'><h1 style='text-decoration: underline;'>" . self::getACoolUserName() . "</h1></li>
+						<li class='unli'><h1>" . self::getACoolUserName() . "</h1></li>
 						<li class='unli'><h1>Birth Date: " . self::getBirthdate() . "</h1></li>
-						<li class='unli'>" . self::getRandomUserImage () . "</li>
+						<li class='unli'>" . self::getRandomUserImage () . "
+						
+						</li>
 					</ul>
-					
 				</li>";
 		} 
 		
@@ -64,7 +66,7 @@ class SuperheroUserNameGeneratorController extends Controller
 							"Consistently", 
 							"Systematically", 
 							"Perfectly",
-							"Occasionally", 
+							"Occasionaly", 
 							"Seldom", 
 							"Often", 
 							"Sometimes", 
@@ -84,7 +86,7 @@ class SuperheroUserNameGeneratorController extends Controller
 			$randomNumber = rand(0, 9);
 			$verb = $verbs[$randomNumber];
 			$number = rand(5, 15);
-			$out = "<h2>$randomName$adverb$verb$number</h2>";
+			$out = "<h2>$randomName$adverb$verb$number<h2>";
 		return $out;  
 	}
 	
@@ -98,11 +100,11 @@ class SuperheroUserNameGeneratorController extends Controller
 				$char4 = mt_rand(1,3);
 				$char5 = mt_rand(1,9);
 				
-				$images = "<img class='face' src='img/back$char1.png' width='15%' height='15%'>
-				<img class='face' src='img/m-hair-$char2.png' width='15%' height='15%'>
-				<img class='face' src='img/m-nose-$char3.png' width='15%' height='15%'>
-				<img class='face' src='img/m-mouth-$char4.png' width='15%' height='15%'>
-				<img class='face' src='img/m-eyes-$char5.png' width='15%' height='15%'>";
+				$images = "<div id='face'><img class='face' src='img/back$char1.png' width='15%' height='15%'></div>
+				</div><img class='face' src='img/m-hair-$char2.png' width='15%' height='15%'></div>
+				</div><img class='face' src='img/m-nose-$char3.png' width='15%' height='15%'></div>
+				</div><img class='face' src='img/m-mouth-$char4.png' width='15%' height='15%'></div>
+				</div><img class='face' src='img/m-eyes-$char5.png' width='15%' height='15%'></div>";
 			
 		} else {
 				$char1 = mt_rand(1,5);
@@ -110,10 +112,10 @@ class SuperheroUserNameGeneratorController extends Controller
 				$char3 = mt_rand(1,12);
 				$char4 = mt_rand(1,3);
 				
-				$images = "<img class='face' src='img/back$char1.png' width='15%' height='15%'>
-				<img class='face' src='img/f-eyesnose-$char2.png' width='15%' height='15%'>
-				<img class='face' src='img/f-hair-$char3.png' width='15%' height='15%'>
-				<img class='face' src='img/f-mouth-$char4.png' width='15%' height='15%'>";
+				$images = "</div><img class='face' src='img/back$char1.png' width='15%' height='15%'></div>
+				</div><img class='face' src='img/f-eyesnose-$char2.png' width='15%' height='15%'></div>
+				</div><img class='face' src='img/f-hair-$char3.png' width='15%' height='15%'></div>
+				</div><img class='face' src='img/f-mouth-$char4.png' width='15%' height='15%'></div>";
 			
 		}
 		return $images;

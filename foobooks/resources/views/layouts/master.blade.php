@@ -4,15 +4,16 @@
     <title>
         {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
         @yield('title',"The Late Night Programmer's BFF")
-    </title>
+    </title> 
 
     <meta charset='utf-8'>
-    <link href="/css/style.css" type='text/css' rel='stylesheet'>
+    <link href="public/css/style.css" type='text/css' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Cabin+Sketch:700,400' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet"  type="text/css" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    {{-- <link href="/css/style.css" type='text/css' rel='stylesheet'> --}}	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     {{-- Yield any page specific CSS files or anything else you might want in the <head> --}}
@@ -43,6 +44,9 @@
 		</section>
 
 		<footer>
+		<br>
+		<br>
+		<br>
 			Late Night Programmer's BFF&copy; {{ date('Y') }}
 		</footer>
 

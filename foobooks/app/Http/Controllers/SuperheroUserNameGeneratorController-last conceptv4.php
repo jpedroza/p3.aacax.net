@@ -8,6 +8,7 @@ class SuperheroUserNameGeneratorController extends Controller
 {
     public function getIndex()
     {
+        //return "Get the number of user names to Generate";
 		return view('superherousernamegenerator.index');
     }
 	
@@ -18,25 +19,55 @@ class SuperheroUserNameGeneratorController extends Controller
 		$this->validate($request,['numberOfUsers' => 'required|numeric|max:90|min:1']);
 		$num = $data['numberOfUsers'];
 		$tok = $data['_token'];
-		$outstring = "";
-		for ($x = 0; $x < $num; $x++) {
-			$outstring .=
-				"<li class='user'>
-					<ul>
-						<li class='unli'><h1 style='text-decoration: underline;'>" . self::getACoolUserName() . "</h1></li>
-						<li class='unli'><h1>Birth Date: " . self::getBirthdate() . "</h1></li>
-						<li class='unli'>" . self::getRandomUserImage () . "</li>
-					</ul>
-					
-				</li>";
-		} 
+		$strArray = Array();
+		$strArray = self::getACoolUserName($num);
+		$imageArray = self::getRandomUserImage();
+		$morf = array_shift($imageArray);
+		
+		print_r($imageArray);
+		
+		if ($morf == "m") {
+			$c1 = array_shift($imageArray); 
+			$c2 = array_shift($imageArray); 
+			$c3 = array_shift($imageArray); 
+			$c4 = array_shift($imageArray); 
+			$c5 = array_shift($imageArray); 
+		} else {
+			$c1 = array_shift($imageArray); 
+			$c2 = array_shift($imageArray); 
+			$c3 = array_shift($imageArray); 
+			$c4 = array_shift($imageArray); 
+			$c5 = null;
+		}
+		/*$morf = array_shift($imageArray); 
+		if ($morf == "m") {
+			$c1 = array_shift($imageArray); 
+			$c2 = array_shift($imageArray); 
+			$c3 = array_shift($imageArray); 
+			$c4 = array_shift($imageArray); 
+			$c5 = array_shift($imageArray); 
+		} else {
+			$c1 = array_shift($imageArray); 
+			$c2 = array_shift($imageArray); 
+			$c3 = array_shift($imageArray); 
+			$c4 = array_shift($imageArray); 
+		}
+		*/
 		
 		return view('superherousernamegenerator.postindex')	->with('numberOfUsers', $num)
-															->with('outstring', $outstring);
+															->with(['username' => $strArray])
+															->with('c1', $c1)			
+															->with('c2', $c2)
+															->with('c3', $c3)
+															->with('c4', $c4)
+															->with('c5', $c5);
+
+															//->with(['picture' => $imageArray]);
     }
 
-	public function getACoolUserName() {
-		$out = "";
+	public function getACoolUserName($numberOfUserNames) {
+		$out=array();
+		for ($x = 0; $x < $numberOfUserNames; $x++) {
 		$randomNumber = rand(0, 19);
 		$superHeroNames = array("Raven", 
 								"GreenLantern", 
@@ -64,7 +95,7 @@ class SuperheroUserNameGeneratorController extends Controller
 							"Consistently", 
 							"Systematically", 
 							"Perfectly",
-							"Occasionally", 
+							"Occasionaly", 
 							"Seldom", 
 							"Often", 
 							"Sometimes", 
@@ -84,12 +115,13 @@ class SuperheroUserNameGeneratorController extends Controller
 			$randomNumber = rand(0, 9);
 			$verb = $verbs[$randomNumber];
 			$number = rand(5, 15);
-			$out = "<h2>$randomName$adverb$verb$number</h2>";
+			array_push($out, "$randomName$adverb$verb$number");
+		}
 		return $out;  
 	}
 	
 	public function getRandomUserImage () {
-		$images="";
+		$characteristics = array();
 		$maleorfemale = mt_rand(1, 2);
 		if ($maleorfemale == 1) {
 				$char1 = mt_rand(1,5);
@@ -97,35 +129,15 @@ class SuperheroUserNameGeneratorController extends Controller
 				$char3 = mt_rand(1,3);
 				$char4 = mt_rand(1,3);
 				$char5 = mt_rand(1,9);
-				
-				$images = "<img class='face' src='img/back$char1.png' width='15%' height='15%'>
-				<img class='face' src='img/m-hair-$char2.png' width='15%' height='15%'>
-				<img class='face' src='img/m-nose-$char3.png' width='15%' height='15%'>
-				<img class='face' src='img/m-mouth-$char4.png' width='15%' height='15%'>
-				<img class='face' src='img/m-eyes-$char5.png' width='15%' height='15%'>";
-			
+			array_push($characteristics, "m", $char1, $char2, $char3, $char4, $char5);
 		} else {
 				$char1 = mt_rand(1,5);
-				$char2 = mt_rand(1,9); 
+				$char2 = mt_rand(1,9);
 				$char3 = mt_rand(1,12);
 				$char4 = mt_rand(1,3);
-				
-				$images = "<img class='face' src='img/back$char1.png' width='15%' height='15%'>
-				<img class='face' src='img/f-eyesnose-$char2.png' width='15%' height='15%'>
-				<img class='face' src='img/f-hair-$char3.png' width='15%' height='15%'>
-				<img class='face' src='img/f-mouth-$char4.png' width='15%' height='15%'>";
-			
+			array_push($characteristics, "f", $char1, $char2, $char3, $char4);
 		}
-		return $images;
-	}
-	
-	public function getBirthdate () {
-		$bdate = "";
-		$month = mt_rand(1,12);
-		$day = mt_rand(1,30);
-		$year = mt_rand(1969,1996);
-		$bdate = $month . "/" . $day . "/" . $year;
-		return $bdate;
+		return $characteristics;
 	}
 	
 }

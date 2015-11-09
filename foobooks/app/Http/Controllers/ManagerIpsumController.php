@@ -1,9 +1,9 @@
 <?php
 
-namespace Foobooks\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Foobooks\Http\Requests;
+use App\Foobooks\Requests;
 use Foobooks\Http\Controllers\Controller;
 use App\Helpers\OutputGeneratorController;
 
@@ -14,7 +14,7 @@ class ManagerIpsumController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function getIndex() {
-		return view('manageripsum.index');
+		return view('managerIpsum.index');
     }
 	
 	public function postIndex(Request $request){
@@ -28,7 +28,7 @@ class ManagerIpsumController extends Controller {
 		$hmp = $data['hmp'];
 		$flat = self::getParagraphs($hmp,$hmspp);
 		
-		return view('manageripsum.postindex')->with(['paragraphs' => $flat])	
+		return view('managerIpsum.postindex')->with(['paragraphs' => $flat])	
 											 ->with(['howmanyparagraphs' => $hmp]);
     } 
 	

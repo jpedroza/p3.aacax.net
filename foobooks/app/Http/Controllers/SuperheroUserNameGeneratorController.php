@@ -8,7 +8,7 @@ class SuperheroUserNameGeneratorController extends Controller
 {
     public function getIndex()
     {
-		return view('superherousernamegenerator.index');
+		return view('superheroUserNameGenerator.index');
     }
 	
 	public function postIndex(Request $request)
@@ -31,7 +31,7 @@ class SuperheroUserNameGeneratorController extends Controller
 				</li>";
 		} 
 		
-		return view('superherousernamegenerator.postindex')	->with('numberOfUsers', $num)
+		return view('superheroUserNameGenerator.postindex')	->with('numberOfUsers', $num)
 															->with('outstring', $outstring);
     }
 
@@ -124,7 +124,7 @@ class SuperheroUserNameGeneratorController extends Controller
 		$month = mt_rand(1,12);
 		$day = mt_rand(1,30);
 		$year = mt_rand(1969,1996);
-		$bdate = $month . "/" . $day . "/" . $year;
+		$bdate = $month . "/" . $day . "/" . $year; 
 		return $bdate;
 	}
 	

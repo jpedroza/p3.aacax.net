@@ -16,7 +16,7 @@ class LateNightPowerBoostController extends Controller
     public function getIndex()
     {
 		
-		return view('latenightpowerboost.index'); 
+		return view('lateNightPowerBoost.index'); 
     }
 	
 	public function postIndex(Request $request)
@@ -25,7 +25,7 @@ class LateNightPowerBoostController extends Controller
 		$num = mt_rand(2,11);
 		$outstring = "<img src='img/" . $num . ".png' alt='cartoon goes here'>";
 		// Get a random cartoon
-		return view('latenightpowerboost.postindex')->with('out', $outstring);
+		return view('lateNightPowerBoost.postindex')->with('out', $outstring);
     }
 
 }
